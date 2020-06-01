@@ -1,0 +1,499 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		866C5972246D78FE0076072F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866C5971246D78FE0076072F /* AppDelegate.swift */; };
+		866C5974246D78FE0076072F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866C5973246D78FE0076072F /* SceneDelegate.swift */; };
+		866C5976246D78FE0076072F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866C5975246D78FE0076072F /* ViewController.swift */; };
+		866C5979246D78FE0076072F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 866C5977246D78FE0076072F /* Main.storyboard */; };
+		866C597B246D79010076072F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 866C597A246D79010076072F /* Assets.xcassets */; };
+		866C597E246D79010076072F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 866C597C246D79010076072F /* LaunchScreen.storyboard */; };
+		866E63E224834AA2000CE371 /* client_75576434468-r1k2hli37t9lvfdipteu0qrjtfjbb1rh.apps.googleusercontent.com.plist in Resources */ = {isa = PBXBuildFile; fileRef = 866E63E124834AA2000CE371 /* client_75576434468-r1k2hli37t9lvfdipteu0qrjtfjbb1rh.apps.googleusercontent.com.plist */; };
+		869F623D2484760500EB833C /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869F623C2484760500EB833C /* Test.swift */; };
+		869F623F24853A4200EB833C /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869F623E24853A4200EB833C /* SignInVC.swift */; };
+		869F6261248540FF00EB833C /* SignInPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869F6260248540FF00EB833C /* SignInPresenter.swift */; };
+		869F62642485426C00EB833C /* SignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869F62632485426C00EB833C /* SignIn.swift */; };
+		9224674B625722A583A5B327 /* Pods_UTube.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE8E06649330C52E6DC596E8 /* Pods_UTube.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		665632B005ACCE18B6986CBB /* Pods-UTube.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UTube.debug.xcconfig"; path = "Target Support Files/Pods-UTube/Pods-UTube.debug.xcconfig"; sourceTree = "<group>"; };
+		866C596E246D78FE0076072F /* UTube.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UTube.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		866C5971246D78FE0076072F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		866C5973246D78FE0076072F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		866C5975246D78FE0076072F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		866C5978246D78FE0076072F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		866C597A246D79010076072F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		866C597D246D79010076072F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		866C597F246D79010076072F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		866E63E124834AA2000CE371 /* client_75576434468-r1k2hli37t9lvfdipteu0qrjtfjbb1rh.apps.googleusercontent.com.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "client_75576434468-r1k2hli37t9lvfdipteu0qrjtfjbb1rh.apps.googleusercontent.com.plist"; sourceTree = "<group>"; };
+		869F623C2484760500EB833C /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
+		869F623E24853A4200EB833C /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
+		869F6260248540FF00EB833C /* SignInPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInPresenter.swift; sourceTree = "<group>"; };
+		869F62632485426C00EB833C /* SignIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignIn.swift; sourceTree = "<group>"; };
+		CE8E06649330C52E6DC596E8 /* Pods_UTube.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UTube.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F44DF928AA463B08E3CF3D94 /* Pods-UTube.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UTube.release.xcconfig"; path = "Target Support Files/Pods-UTube/Pods-UTube.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		866C596B246D78FE0076072F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9224674B625722A583A5B327 /* Pods_UTube.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0CB08189B85A6C443F211D17 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				665632B005ACCE18B6986CBB /* Pods-UTube.debug.xcconfig */,
+				F44DF928AA463B08E3CF3D94 /* Pods-UTube.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		866C5965246D78FE0076072F = {
+			isa = PBXGroup;
+			children = (
+				866E63E124834AA2000CE371 /* client_75576434468-r1k2hli37t9lvfdipteu0qrjtfjbb1rh.apps.googleusercontent.com.plist */,
+				866C5970246D78FE0076072F /* UTube */,
+				866C596F246D78FE0076072F /* Products */,
+				0CB08189B85A6C443F211D17 /* Pods */,
+				8AC1DCB9A807F09DA0C296EA /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		866C596F246D78FE0076072F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				866C596E246D78FE0076072F /* UTube.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		866C5970246D78FE0076072F /* UTube */ = {
+			isa = PBXGroup;
+			children = (
+				869F62622485425000EB833C /* Contracts */,
+				869F623B2484728400EB833C /* Services */,
+				866E63E3248466BE000CE371 /* Resources */,
+				869124D32480C8C7001A7B7C /* Presenters */,
+				869124D22480C8BF001A7B7C /* Views */,
+				869124D12480C8A9001A7B7C /* Model */,
+			);
+			path = UTube;
+			sourceTree = "<group>";
+		};
+		866E63E3248466BE000CE371 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				866C597C246D79010076072F /* LaunchScreen.storyboard */,
+				866C5971246D78FE0076072F /* AppDelegate.swift */,
+				866C5973246D78FE0076072F /* SceneDelegate.swift */,
+				866C597A246D79010076072F /* Assets.xcassets */,
+				866C597F246D79010076072F /* Info.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		869124D12480C8A9001A7B7C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		869124D22480C8BF001A7B7C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				869F623E24853A4200EB833C /* SignInVC.swift */,
+				866C5975246D78FE0076072F /* ViewController.swift */,
+				866C5977246D78FE0076072F /* Main.storyboard */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		869124D32480C8C7001A7B7C /* Presenters */ = {
+			isa = PBXGroup;
+			children = (
+				869F6260248540FF00EB833C /* SignInPresenter.swift */,
+			);
+			name = Presenters;
+			sourceTree = "<group>";
+		};
+		869F623B2484728400EB833C /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				869F623C2484760500EB833C /* Test.swift */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
+		869F62622485425000EB833C /* Contracts */ = {
+			isa = PBXGroup;
+			children = (
+				869F62632485426C00EB833C /* SignIn.swift */,
+			);
+			name = Contracts;
+			sourceTree = "<group>";
+		};
+		8AC1DCB9A807F09DA0C296EA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CE8E06649330C52E6DC596E8 /* Pods_UTube.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		866C596D246D78FE0076072F /* UTube */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 866C5982246D79010076072F /* Build configuration list for PBXNativeTarget "UTube" */;
+			buildPhases = (
+				95DD8BBA1226AFBB767C2A1C /* [CP] Check Pods Manifest.lock */,
+				866C596A246D78FE0076072F /* Sources */,
+				866C596B246D78FE0076072F /* Frameworks */,
+				866C596C246D78FE0076072F /* Resources */,
+				28148212D4B762B7C1A890D6 /* [CP] Embed Pods Frameworks */,
+				DCC5A57FF9EDDA40D760429A /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = UTube;
+			productName = UTube;
+			productReference = 866C596E246D78FE0076072F /* UTube.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		866C5966246D78FE0076072F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1140;
+				LastUpgradeCheck = 1140;
+				ORGANIZATIONNAME = "Eyad Heikal";
+				TargetAttributes = {
+					866C596D246D78FE0076072F = {
+						CreatedOnToolsVersion = 11.4.1;
+					};
+				};
+			};
+			buildConfigurationList = 866C5969246D78FE0076072F /* Build configuration list for PBXProject "UTube" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 866C5965246D78FE0076072F;
+			productRefGroup = 866C596F246D78FE0076072F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				866C596D246D78FE0076072F /* UTube */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		866C596C246D78FE0076072F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				866C597E246D79010076072F /* LaunchScreen.storyboard in Resources */,
+				866C597B246D79010076072F /* Assets.xcassets in Resources */,
+				866C5979246D78FE0076072F /* Main.storyboard in Resources */,
+				866E63E224834AA2000CE371 /* client_75576434468-r1k2hli37t9lvfdipteu0qrjtfjbb1rh.apps.googleusercontent.com.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		28148212D4B762B7C1A890D6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-UTube/Pods-UTube-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-UTube/Pods-UTube-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-UTube/Pods-UTube-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		95DD8BBA1226AFBB767C2A1C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-UTube-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DCC5A57FF9EDDA40D760429A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-UTube/Pods-UTube-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-UTube/Pods-UTube-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-UTube/Pods-UTube-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		866C596A246D78FE0076072F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				869F6261248540FF00EB833C /* SignInPresenter.swift in Sources */,
+				866C5976246D78FE0076072F /* ViewController.swift in Sources */,
+				869F623D2484760500EB833C /* Test.swift in Sources */,
+				866C5972246D78FE0076072F /* AppDelegate.swift in Sources */,
+				869F62642485426C00EB833C /* SignIn.swift in Sources */,
+				866C5974246D78FE0076072F /* SceneDelegate.swift in Sources */,
+				869F623F24853A4200EB833C /* SignInVC.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		866C5977246D78FE0076072F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				866C5978246D78FE0076072F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		866C597C246D79010076072F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				866C597D246D79010076072F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		866C5980246D79010076072F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		866C5981246D79010076072F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		866C5983246D79010076072F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 665632B005ACCE18B6986CBB /* Pods-UTube.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = UTube/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = eyad.UTube;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		866C5984246D79010076072F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F44DF928AA463B08E3CF3D94 /* Pods-UTube.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = UTube/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = eyad.UTube;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		866C5969246D78FE0076072F /* Build configuration list for PBXProject "UTube" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				866C5980246D79010076072F /* Debug */,
+				866C5981246D79010076072F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		866C5982246D79010076072F /* Build configuration list for PBXNativeTarget "UTube" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				866C5983246D79010076072F /* Debug */,
+				866C5984246D79010076072F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 866C5966246D78FE0076072F /* Project object */;
+}
