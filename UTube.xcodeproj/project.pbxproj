@@ -64,7 +64,6 @@
 		866C5965246D78FE0076072F = {
 			isa = PBXGroup;
 			children = (
-				866E63E124834AA2000CE371 /* client_75576434468-r1k2hli37t9lvfdipteu0qrjtfjbb1rh.apps.googleusercontent.com.plist */,
 				866C5970246D78FE0076072F /* UTube */,
 				866C596F246D78FE0076072F /* Products */,
 				0CB08189B85A6C443F211D17 /* Pods */,
@@ -101,6 +100,7 @@
 				866C5973246D78FE0076072F /* SceneDelegate.swift */,
 				866C597A246D79010076072F /* Assets.xcassets */,
 				866C597F246D79010076072F /* Info.plist */,
+				866E63E124834AA2000CE371 /* client_75576434468-r1k2hli37t9lvfdipteu0qrjtfjbb1rh.apps.googleusercontent.com.plist */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
