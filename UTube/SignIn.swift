@@ -1,5 +1,5 @@
 //
-//  SignIn.swift
+//  Test.swift
 //  UTube
 //
 //  Created by Eyad Heikal on 6/1/20.
@@ -7,11 +7,15 @@
 //
 
 import Foundation
+import GoogleSignIn
+import GoogleAPIClientForREST
 
-protocol SingInPresenterProtocol {
+class SingInService {
+    // If modifying these scopes, delete your previously saved credentials by
+    // resetting the iOS simulator or uninstall the app.
+    private let scopes = [kGTLRAuthScopeYouTubeReadonly, kGTLRAuthScopeYouTubeYoutubepartnerChannelAudit]
 
-}
-
-protocol SignInView: class {
-    func reloadData()
+    private let service = GTLRYouTubeService()
+    let signInButton = GIDSignInButton()
+    let output = UITextView()
 }

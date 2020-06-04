@@ -8,6 +8,8 @@ target 'UTube' do
 	pod 'Google/SignIn', '~> 3.0.3'
 	pod 'RxSwift', '~> 5'
 	pod 'RxCocoa', '~> 5'
+  	pod "youtube-ios-player-helper"
+
   # Pods for UTube
 
 end

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Tz2-eH-GL3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -17,17 +17,20 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <segue destination="Tz2-eH-GL3" kind="show" identifier="SignInSuccess" id="aU0-mQ-LIw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-499" y="-178"/>
+            <point key="canvasLocation" x="-500.00000000000006" y="-178.125"/>
         </scene>
         <!--Explore-->
         <scene sceneID="dnB-hL-gmS">
             <objects>
-                <viewController id="kbd-rc-UTy" sceneMemberID="viewController">
+                <viewController id="kbd-rc-UTy" customClass="ExploreVC" customModule="UTube" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Pxq-es-tRe">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="RAA-vr-4eB"/>
@@ -38,28 +41,12 @@
             </objects>
             <point key="canvasLocation" x="1274" y="-900"/>
         </scene>
-        <!--Inbox-->
-        <scene sceneID="ggp-aH-Mba">
-            <objects>
-                <viewController id="8bM-pX-g3x" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="v3w-c6-61V">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="YAf-4s-qls"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Inbox" image="envelope" catalog="system" id="ej7-o6-Cmz"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Zc8-pz-1o5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="307" y="563"/>
-        </scene>
         <!--Library-->
         <scene sceneID="Xs5-GJ-Rbv">
             <objects>
-                <viewController id="hJq-GP-7n4" sceneMemberID="viewController">
+                <viewController id="hJq-GP-7n4" customClass="LibraryVC" customModule="UTube" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="21Q-IL-M5g">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="TKo-vR-Pz0"/>
@@ -68,14 +55,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CrT-VK-ot6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1274" y="563"/>
+            <point key="canvasLocation" x="307" y="526"/>
         </scene>
         <!--Subscriptions-->
         <scene sceneID="0Cf-8W-Pev">
             <objects>
-                <viewController id="lfR-Rv-EB5" sceneMemberID="viewController">
+                <viewController id="lfR-Rv-EB5" customClass="SubscriptionsVC" customModule="UTube" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FAP-RR-Fwc">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="yUQ-I3-Jox"/>
@@ -84,28 +71,44 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pq2-K7-cNR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1274" y="-178"/>
+            <point key="canvasLocation" x="1274" y="-200"/>
         </scene>
         <!--Home-->
         <scene sceneID="vQx-3H-3XY">
             <objects>
-                <viewController id="WYW-89-FCy" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Home" id="WYW-89-FCy" customClass="HomeVC" customModule="UTube" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YXp-J1-4xb">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zIE-e9-buS">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="759"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="zIE-e9-buS" firstAttribute="leading" secondItem="I93-od-sT0" secondAttribute="leading" id="Y8W-bb-VyQ"/>
+                            <constraint firstItem="zIE-e9-buS" firstAttribute="top" secondItem="I93-od-sT0" secondAttribute="top" id="hsg-6v-0Rc"/>
+                            <constraint firstItem="zIE-e9-buS" firstAttribute="trailing" secondItem="I93-od-sT0" secondAttribute="trailing" id="qYS-Lv-2Sv"/>
+                            <constraint firstItem="zIE-e9-buS" firstAttribute="bottom" secondItem="I93-od-sT0" secondAttribute="bottom" id="y6g-7L-OnE"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="I93-od-sT0"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" id="eSH-sw-Cfi"/>
+                    <connections>
+                        <outlet property="homeTableView" destination="zIE-e9-buS" id="uNV-9D-P8X"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mVw-7a-Xbl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="306" y="-927"/>
+            <point key="canvasLocation" x="305.79710144927537" y="-927.45535714285711"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--TabVC-->
         <scene sceneID="NYR-VZ-etL">
             <objects>
-                <tabBarController id="Tz2-eH-GL3" sceneMemberID="viewController">
+                <tabBarController id="Tz2-eH-GL3" customClass="TabVC" customModule="UTube" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="yqH-C7-tXX"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="215-lk-als">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -116,7 +119,6 @@
                         <segue destination="kbd-rc-UTy" kind="relationship" relationship="viewControllers" id="k9f-Ch-Huc"/>
                         <segue destination="lfR-Rv-EB5" kind="relationship" relationship="viewControllers" id="Zv7-s6-0b5"/>
                         <segue destination="hJq-GP-7n4" kind="relationship" relationship="viewControllers" id="Udn-wB-My0"/>
-                        <segue destination="8bM-pX-g3x" kind="relationship" relationship="viewControllers" id="NhF-YT-gSJ"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RNB-vs-V5R" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -125,7 +127,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="envelope" catalog="system" width="128" height="93"/>
         <image name="house" catalog="system" width="128" height="110"/>
         <image name="play.rectangle" catalog="system" width="128" height="93"/>
         <image name="safari" catalog="system" width="128" height="121"/>

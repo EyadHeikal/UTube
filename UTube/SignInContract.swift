@@ -1,5 +1,5 @@
 //
-//  Test.swift
+//  SignIn.swift
 //  UTube
 //
 //  Created by Eyad Heikal on 6/1/20.
@@ -7,8 +7,10 @@
 //
 
 import Foundation
-import GoogleSignIn
 
-class SingInService {
-    
+protocol SingInPresenterProtocol {
+
+}
+
+protocol SignInView: class {
 }
