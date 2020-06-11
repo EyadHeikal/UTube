@@ -26,7 +26,7 @@ class SubscriptionsVC: UIViewController {
             // To retrieve data for the current user's channel, comment out the previous
             // line (query.identifier ...) and uncomment the next line (query.mine ...)
             // query.mine = true
-            Network.service.executeQuery(query,
+            Network.shared.service.executeQuery(query,
                                  delegate: self,
                                  didFinish: #selector(displayResultWithTicket(ticket:finishedWithObject:error:)))
         }
@@ -56,9 +56,9 @@ class SubscriptionsVC: UIViewController {
 //                //outputText += "view count: \(viewCount!)\n"
 //            }
             //output.text = outputText
-            print(response.items?[0].snippet?.title)
-            print(response.items?[1].snippet?.title)
-            print(response.items?[2].snippet?.title)
+            print(response.items?[0].snippet?.title as Any)
+            print(response.items?[1].snippet?.title as Any)
+            print(response.items?[2].snippet?.title as Any)
 
         }
     /*

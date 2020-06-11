@@ -9,6 +9,8 @@ target 'UTube' do
 	pod 'RxSwift', '~> 5'
 	pod 'RxCocoa', '~> 5'
   	pod "youtube-ios-player-helper"
+    pod 'SDWebImage', '~> 5.0'
+
 
   # Pods for UTube
 

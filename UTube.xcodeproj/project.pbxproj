@@ -24,6 +24,7 @@
 		869F623F24853A4200EB833C /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869F623E24853A4200EB833C /* SignInVC.swift */; };
 		869F6261248540FF00EB833C /* SignInPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869F6260248540FF00EB833C /* SignInPresenter.swift */; };
 		869F62642485426C00EB833C /* SignInContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869F62632485426C00EB833C /* SignInContract.swift */; };
+		86C89163248BEE7E00613A4A /* VideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C89162248BEE7E00613A4A /* VideoView.swift */; };
 		86E374D62487028400802D04 /* TabVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E374D52487028400802D04 /* TabVC.swift */; };
 		9224674B625722A583A5B327 /* Pods_UTube.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE8E06649330C52E6DC596E8 /* Pods_UTube.framework */; };
 /* End PBXBuildFile section */
@@ -49,6 +50,7 @@
 		869F623E24853A4200EB833C /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
 		869F6260248540FF00EB833C /* SignInPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInPresenter.swift; sourceTree = "<group>"; };
 		869F62632485426C00EB833C /* SignInContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInContract.swift; sourceTree = "<group>"; };
+		86C89162248BEE7E00613A4A /* VideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoView.swift; sourceTree = "<group>"; };
 		86E374D52487028400802D04 /* TabVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabVC.swift; sourceTree = "<group>"; };
 		CE8E06649330C52E6DC596E8 /* Pods_UTube.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UTube.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F44DF928AA463B08E3CF3D94 /* Pods-UTube.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UTube.release.xcconfig"; path = "Target Support Files/Pods-UTube/Pods-UTube.release.xcconfig"; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 				866C597C246D79010076072F /* LaunchScreen.storyboard */,
 				860CD5612488A98E002A61AC /* VideoCell.swift */,
 				860CD5622488A98E002A61AC /* VideoCell.xib */,
+				86C89162248BEE7E00613A4A /* VideoView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -318,6 +321,7 @@
 				869F623D2484760500EB833C /* SignIn.swift in Sources */,
 				866C5972246D78FE0076072F /* AppDelegate.swift in Sources */,
 				860CD5632488A98E002A61AC /* VideoCell.swift in Sources */,
+				86C89163248BEE7E00613A4A /* VideoView.swift in Sources */,
 				869F62642485426C00EB833C /* SignInContract.swift in Sources */,
 				865F273C2486AD6500A14DBD /* LibraryVC.swift in Sources */,
 				865F27382486AD0400A14DBD /* SubscriptionsVC.swift in Sources */,

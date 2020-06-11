@@ -107,7 +107,7 @@
         <!--TabVC-->
         <scene sceneID="NYR-VZ-etL">
             <objects>
-                <tabBarController id="Tz2-eH-GL3" customClass="TabVC" customModule="UTube" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="tab" id="Tz2-eH-GL3" customClass="TabVC" customModule="UTube" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="yqH-C7-tXX"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="215-lk-als">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>

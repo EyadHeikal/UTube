@@ -14,13 +14,15 @@ class VideoCell: UITableViewCell {
     
     @IBOutlet weak var chanalImage: UIImageView!
     @IBOutlet weak var videoTitle: UILabel!
+    @IBOutlet weak var channelTiltle: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        self.translatesAutoresizingMaskIntoConstraints = false
         chanalImage.layer.masksToBounds = true
 
-        chanalImage.layer.cornerRadius = 35
+        chanalImage.layer.cornerRadius = 20
         
         // Initialization code
     }
@@ -30,5 +32,7 @@ class VideoCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    
     
 }

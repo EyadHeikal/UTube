@@ -9,13 +9,17 @@
 import UIKit
 
 class TabVC: UITabBarController {
-
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.navigationController?.isModalInPresentation = true
         // Do any additional setup after loading the view.
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        print("Yeah")
+    }
 
     /*
     // MARK: - Navigation

@@ -24,6 +24,8 @@ class SignInVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationController?.isModalInPresentation = true
 
         // Configure Google Sign-in.
         GIDSignIn.sharedInstance().delegate = self
@@ -48,19 +50,23 @@ class SignInVC: UIViewController {
               withError error: Error!) {
         if let error = error {
             showAlert(title: "Authentication Error", message: error.localizedDescription)
-            Network.service.authorizer = nil
+            Network.shared.service.authorizer = nil
         } else {
             self.signInButton.isHidden = true
             self.output.isHidden = false
-            Network.service.authorizer = user.authentication.fetcherAuthorizer()
+            Network.shared.service.authorizer = user.authentication.fetcherAuthorizer()
             fetchChannelResource()
             
             //let home = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "Home") as? HomeVC
             //home?.service = GTLRYouTubeService()
             //home?.service?.authorizer = user.authentication.fetcherAuthorizer()
             //self.navigationController?.pushViewController(home!, animated: true)
+            
             performSegue(withIdentifier: "SignInSuccess", sender: self)
             //present(home!, animated: true, completion: nil)
+            //let tabed = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(identifier: "tab") as? TabVC
+            //tabed?.navigationController?.isModalInPresentation = true
+            //present(tabed!, animated: true)
             print("Fuck")
 
         }
@@ -73,7 +79,7 @@ class SignInVC: UIViewController {
         // To retrieve data for the current user's channel, comment out the previous
         // line (query.identifier ...) and uncomment the next line (query.mine ...)
         // query.mine = true
-        Network.service.executeQuery(query,
+        Network.shared.service.executeQuery(query,
                              delegate: self,
                              didFinish: #selector(displayResultWithTicket(ticket:finishedWithObject:error:)))
     }
