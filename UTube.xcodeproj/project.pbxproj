@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		860CD5632488A98E002A61AC /* VideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860CD5612488A98E002A61AC /* VideoCell.swift */; };
 		860CD5642488A98E002A61AC /* VideoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 860CD5622488A98E002A61AC /* VideoCell.xib */; };
+		863846152491F759005C8C73 /* LibraryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863846142491F759005C8C73 /* LibraryPresenter.swift */; };
+		863846172491F7BF005C8C73 /* LibraryContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863846162491F7BF005C8C73 /* LibraryContract.swift */; };
+		863846192492186A005C8C73 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863846182492186A005C8C73 /* Video.swift */; };
 		865F27342486A8BD00A14DBD /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865F27332486A8BD00A14DBD /* HomeVC.swift */; };
 		865F27362486AB8200A14DBD /* ExploreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865F27352486AB8200A14DBD /* ExploreVC.swift */; };
 		865F27382486AD0400A14DBD /* SubscriptionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865F27372486AD0400A14DBD /* SubscriptionsVC.swift */; };
@@ -33,6 +36,9 @@
 		665632B005ACCE18B6986CBB /* Pods-UTube.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UTube.debug.xcconfig"; path = "Target Support Files/Pods-UTube/Pods-UTube.debug.xcconfig"; sourceTree = "<group>"; };
 		860CD5612488A98E002A61AC /* VideoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCell.swift; sourceTree = "<group>"; };
 		860CD5622488A98E002A61AC /* VideoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoCell.xib; sourceTree = "<group>"; };
+		863846142491F759005C8C73 /* LibraryPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryPresenter.swift; sourceTree = "<group>"; };
+		863846162491F7BF005C8C73 /* LibraryContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryContract.swift; sourceTree = "<group>"; };
+		863846182492186A005C8C73 /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
 		865F27332486A8BD00A14DBD /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		865F27352486AB8200A14DBD /* ExploreVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreVC.swift; sourceTree = "<group>"; };
 		865F27372486AD0400A14DBD /* SubscriptionsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionsVC.swift; sourceTree = "<group>"; };
@@ -124,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				865F273D2486B07F00A14DBD /* Network.swift */,
+				863846182492186A005C8C73 /* Video.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -150,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				869F6260248540FF00EB833C /* SignInPresenter.swift */,
+				863846142491F759005C8C73 /* LibraryPresenter.swift */,
 			);
 			name = Presenters;
 			sourceTree = "<group>";
@@ -166,6 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				869F62632485426C00EB833C /* SignInContract.swift */,
+				863846162491F7BF005C8C73 /* LibraryContract.swift */,
 			);
 			name = Contracts;
 			sourceTree = "<group>";
@@ -316,6 +325,7 @@
 				865F273E2486B07F00A14DBD /* Network.swift in Sources */,
 				86E374D62487028400802D04 /* TabVC.swift in Sources */,
 				865F27342486A8BD00A14DBD /* HomeVC.swift in Sources */,
+				863846172491F7BF005C8C73 /* LibraryContract.swift in Sources */,
 				869F6261248540FF00EB833C /* SignInPresenter.swift in Sources */,
 				865F27362486AB8200A14DBD /* ExploreVC.swift in Sources */,
 				869F623D2484760500EB833C /* SignIn.swift in Sources */,
@@ -323,9 +333,11 @@
 				860CD5632488A98E002A61AC /* VideoCell.swift in Sources */,
 				86C89163248BEE7E00613A4A /* VideoView.swift in Sources */,
 				869F62642485426C00EB833C /* SignInContract.swift in Sources */,
+				863846192492186A005C8C73 /* Video.swift in Sources */,
 				865F273C2486AD6500A14DBD /* LibraryVC.swift in Sources */,
 				865F27382486AD0400A14DBD /* SubscriptionsVC.swift in Sources */,
 				866C5974246D78FE0076072F /* SceneDelegate.swift in Sources */,
+				863846152491F759005C8C73 /* LibraryPresenter.swift in Sources */,
 				869F623F24853A4200EB833C /* SignInVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

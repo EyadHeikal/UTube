@@ -35,10 +35,10 @@ class Network: NSObject {
     func getChannelImage(id: String) {
         let query = GTLRYouTubeQuery_ChannelsList.query(withPart: "snippet,contentDetails,statistics")
         query.identifier = id
-        service.executeQuery(query, delegate: self, didFinish: #selector(displayResultWithTicket(ticket:finishedWithObject:error:)))
+        service.executeQuery(query, delegate: self, didFinish: #selector(getChannelImageS(ticket:finishedWithObject:error:)))
     }
     
-    @objc func displayResultWithTicket(ticket: GTLRServiceTicket, finishedWithObject response : GTLRYouTube_ChannelListResponse, error : NSError?) {
+    @objc func getChannelImageS(ticket: GTLRServiceTicket, finishedWithObject response : GTLRYouTube_ChannelListResponse, error : NSError?) {
         
         if let error = error {
             //showAlert(title: "Error", message: error.localizedDescription)
@@ -49,6 +49,75 @@ class Network: NSObject {
         channelImage = (response.items?[0].snippet?.thumbnails?.defaultProperty?.url)!
         //print(channelImage)
     }
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     
+    var dataDict2: Variable<[Video]> = Variable([])
+
+    func getLikedVideos() {
+        let query = GTLRYouTubeQuery_VideosList.query(withPart: "snippet,contentDetails,statistics")
+        query.myRating = "like"
+        Network.shared.service.executeQuery(query, delegate: self, didFinish: #selector(getLikedVideosS(ticket:finishedWithObject:error:)))
+    }
+    
+    @objc func getLikedVideosS(ticket: GTLRServiceTicket, finishedWithObject response : GTLRYouTube_VideoListResponse, error : NSError?) {
+        
+        if let error = error {
+            //showAlert(title: "Error", message: error.localizedDescription)
+            print(error)
+            return
+        }
+        
+        var i = 0
+        
+        while i < response.items!.count {
+            
+            let video = Video(id: (response.items?[i].snippet?.title)!,
+                              title: (response.items?[i].snippet?.title)!,
+                              channelid: (response.items?[i].snippet?.channelId)!,
+                              image: "https://img.youtube.com/vi/\(response.items?[i].identifier ?? "Eyad")/0.jpg")
+            dataDict2.value.append(video)
+            
+            i += 1
+        }
+
+        getChannelImage2()
+        
+    }
+    
+    func getChannelImage2() {
+        let query = GTLRYouTubeQuery_ChannelsList.query(withPart: "snippet,contentDetails,statistics")
+        query.identifier = "UCp1mRTkVlqDnxz_9S0YD9YQ"
+        
+        for x in dataDict2.value {
+            //if x["channelid"] != nil {
+            query.identifier?.append(",\(x.channelid)")//(",\(x["channelid"]!)")
+            //}
+        }
+        service.executeQuery(query, delegate: self, didFinish: #selector(getChannelImageS2(ticket:finishedWithObject:error:)))
+    }
+    
+    @objc func getChannelImageS2(ticket: GTLRServiceTicket, finishedWithObject response : GTLRYouTube_ChannelListResponse, error : NSError?) {
+        
+        if let error = error {
+            //showAlert(title: "Error", message: error.localizedDescription)
+            print(error)
+            return
+        }
+        
+        for item in response.items! {
+            var i = 0
+            while i < dataDict2.value.count {//for i in dataDict2.value {
+                if item.identifier == dataDict2.value[i].channelid {
+                    dataDict2.value[i].channelimage = (item.snippet?.thumbnails?.defaultProperty?.url)!
+                }
+                i += 1
+            }
+        }
+        
+        print(dataDict2.value)
+    }
+    
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 
 }
