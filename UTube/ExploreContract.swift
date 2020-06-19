@@ -1,17 +1,17 @@
 //
-//  LibraryContract.swift
+//  ExploreContract.swift
 //  UTube
 //
-//  Created by Eyad Heikal on 6/11/20.
+//  Created by Eyad Heikal on 6/18/20.
 //  Copyright © 2020 Eyad Heikal. All rights reserved.
 //
 
 import Foundation
 
-protocol LibraryPresenterProtocol {
+protocol ExplorePresenterProtocol {
     
 }
 
-protocol LibraryView: class {
+protocol ExploreView: class {
     func setupTableView()
 }

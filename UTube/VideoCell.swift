@@ -11,7 +11,6 @@ import UIKit
 class VideoCell: UITableViewCell {
     
     @IBOutlet weak var videoImage: UIImageView!
-    
     @IBOutlet weak var chanalImage: UIImageView!
     @IBOutlet weak var videoTitle: UILabel!
     @IBOutlet weak var channelTiltle: UILabel!
@@ -23,7 +22,7 @@ class VideoCell: UITableViewCell {
         chanalImage.layer.masksToBounds = true
 
         chanalImage.layer.cornerRadius = 20
-        
+        channelTiltle.isHidden = true
         // Initialization code
     }
 

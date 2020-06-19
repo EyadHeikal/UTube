@@ -24,7 +24,6 @@ class SignInVC: UIViewController, UIAdaptivePresentationControllerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
 
         // Configure Google Sign-in.
         GIDSignIn.sharedInstance().delegate = self
@@ -54,17 +53,11 @@ class SignInVC: UIViewController, UIAdaptivePresentationControllerDelegate {
             self.signInButton.isHidden = true
             self.output.isHidden = false
             Network.shared.service.authorizer = user.authentication.fetcherAuthorizer()
-            fetchChannelResource()
             
             let tabed = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(identifier: "tab") as? TabVC
-
-            tabed?.navigationController?.isModalInPresentation = false
+            tabed?.modalPresentationStyle = .fullScreen
             navigationController!.present(tabed!, animated: true, completion: nil)
 
-            
-            //performSegue(withIdentifier: "SignInSuccess", sender: self)
-
-            print("Fuck")
 
         }
     }

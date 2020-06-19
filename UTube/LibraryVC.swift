@@ -8,18 +8,30 @@
 
 import UIKit
 import GoogleAPIClientForREST
+import RxSwift
+import SDWebImage
 
-class LibraryVC: UIViewController {
-
+class LibraryVC: UIViewController, UITableViewDelegate {
+    
+    @IBOutlet weak var tableView: UITableView!
+    
     var present: LibraryPresenter?
+    
+    let disposeBag = DisposeBag()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        print("Library")
+
+        tableView.register(UINib(nibName: "VideoCell", bundle: nil), forCellReuseIdentifier: "MyCell")
+        tableView.rx.setDelegate(self).disposed(by: disposeBag)
+        
         present = LibraryPresenter(self)
         present?.getVideos()
-        print("Library")
+        
+        
         // Do any additional setup after loading the view.
     }
     

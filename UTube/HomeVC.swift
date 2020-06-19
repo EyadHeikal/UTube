@@ -12,7 +12,7 @@ import RxSwift
 import RxCocoa
 import SDWebImage
 
-class HomeVC: UIViewController, UICollectionViewDelegate {
+class HomeVC: UIViewController, UITableViewDelegate {
 
     @IBOutlet weak var homeTableView: UITableView!
     

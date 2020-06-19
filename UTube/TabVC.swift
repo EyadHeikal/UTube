@@ -13,7 +13,6 @@ class TabVC: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.isModalInPresentation = true
         // Do any additional setup after loading the view.
     }
     
