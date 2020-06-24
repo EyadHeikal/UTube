@@ -48,6 +48,7 @@ class SignInVC: UIViewController, UIAdaptivePresentationControllerDelegate {
               withError error: Error!) {
         if let error = error {
             showAlert(title: "Authentication Error", message: error.localizedDescription)
+            print(error.localizedDescription)
             Network.shared.service.authorizer = nil
         } else {
             self.signInButton.isHidden = true
@@ -57,7 +58,8 @@ class SignInVC: UIViewController, UIAdaptivePresentationControllerDelegate {
             let tabed = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(identifier: "tab") as? TabVC
             tabed?.modalPresentationStyle = .fullScreen
             navigationController!.present(tabed!, animated: true, completion: nil)
-
+            
+            fetchChannelResource()
 
         }
     }

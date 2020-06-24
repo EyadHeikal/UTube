@@ -32,23 +32,24 @@ class ExploreVC: UIViewController, UITableViewDelegate {
         //present?.getSearchResults(queryText: "Covid 19")
         
         
-       let text = textField.rx.text.orEmpty.debounce(.milliseconds(500), scheduler: MainScheduler.instance).flatMap{ (query) -> Observable<[QueryResult]> in
-        if query == "" {
-            return Observable<[QueryResult]>.just([])
-        }
-        else {
-            Network.shared.getSearchResults(queryText: query)
-            return Network.shared.dataDict4.asObservable()//Observable<[QueryResult]>.just([])
-        }
+        textField.rx.text.orEmpty.debounce(.seconds(1), scheduler: MainScheduler.instance).map({ (text)  in
+            return text
+        }).subscribe(onNext: {
+            if $0 == "" {
+                Network.shared.dataDict4.value = []
+            }
+            else {
+                Network.shared.getSearchResults(queryText: $0)
+            }
+        }).disposed(by: disposeBag)
         
-       }.observeOn(MainScheduler.instance)
+        Network.shared.dataDict4.asObservable().bind(to: tableView.rx.items(cellIdentifier: "explorecell")){row, element, cell in
 
-        text.bind(to: tableView.rx.items(cellIdentifier: "explorecell")){row, element, cell in
-
-            cell.textLabel?.text = Network.shared.dataDict4.value[row].title
-        }.disposed(by: disposeBag)
+             cell.textLabel?.text = Network.shared.dataDict4.value[row].title
+         }.disposed(by: disposeBag)
             
+
     }
-        
+            
 
 }

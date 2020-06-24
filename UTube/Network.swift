@@ -161,7 +161,7 @@ class Network: NSObject {
     func getSearchResults(queryText: String) {
         let query = GTLRYouTubeQuery_SearchList.query(withPart: "snippet")
         query.q = queryText
-        query.maxResults = 25
+        query.maxResults = 5
         Network.shared.service.executeQuery(query, delegate: self, didFinish: #selector(displayResultWithTicket4(ticket:finishedWithObject:error:)))
     }
 
@@ -176,12 +176,12 @@ class Network: NSObject {
             print(error)
             return
         }
+        dataDict4.value = []
         var i = 0
         while i < response.items!.count {
                         
             let result = QueryResult(title: (response.items?[i].snippet?.title)!)
             dataDict4.value.append(result)
-            
             i += 1
         }
     }
