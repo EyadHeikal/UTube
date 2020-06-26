@@ -20,25 +20,19 @@ class Network: NSObject {
     let service = GTLRYouTubeService()
     let scopes = [kGTLRAuthScopeYouTubeReadonly, kGTLRAuthScopeYouTubeYoutubepartnerChannelAudit]
     
-    //private var channelImage: String = ""
-    
-    //var channelImage: Variable<[String]> = Variable([])
     var channelImage: String = ""//Variable<[String]> = Variable([])
 
-//    func getChannelImageURL(id: String) -> String {
-//
-//        getChannelImage(id: id)
-//
-//        return channelImage.value
-//    }
+    var dataDict: Variable<[Video]> = Variable([])
+
     
-    func getChannelImage(id: String) {
-        let query = GTLRYouTubeQuery_ChannelsList.query(withPart: "snippet,contentDetails,statistics")
-        query.identifier = id
-        service.executeQuery(query, delegate: self, didFinish: #selector(getChannelImageS(ticket:finishedWithObject:error:)))
+    func getHomeVideos() {
+        let query = GTLRYouTubeQuery_VideosList.query(withPart: "snippet,contentDetails,statistics")
+        query.chart = "mostPopular"
+        query.maxResults = 25
+        Network.shared.service.executeQuery(query, delegate: self, didFinish: #selector(getHomeVideosS(ticket:finishedWithObject:error:)))
     }
     
-    @objc func getChannelImageS(ticket: GTLRServiceTicket, finishedWithObject response : GTLRYouTube_ChannelListResponse, error : NSError?) {
+    @objc func getHomeVideosS(ticket: GTLRServiceTicket, finishedWithObject response : GTLRYouTube_VideoListResponse, error : NSError?) {
         
         if let error = error {
             //showAlert(title: "Error", message: error.localizedDescription)
@@ -46,9 +40,52 @@ class Network: NSObject {
             return
         }
 
-        channelImage = (response.items?[0].snippet?.thumbnails?.defaultProperty?.url)!
+        var i = 0
+        
+        while i < response.items!.count {
+            
+            let video = Video(id: (response.items?[i].snippet?.title)!,
+                              title: (response.items?[i].snippet?.title)!,
+                              channelid: (response.items?[i].snippet?.channelId)!,
+                              image: "https://img.youtube.com/vi/\(response.items?[i].identifier ?? "Eyad")/0.jpg")
+            dataDict.value.append(video)
+            
+            i += 1
+        }
         //print(channelImage)
+        getChannelImage()
     }
+    func getChannelImage() {
+           let query = GTLRYouTubeQuery_ChannelsList.query(withPart: "snippet,contentDetails,statistics")
+           query.identifier = "UCp1mRTkVlqDnxz_9S0YD9YQ"
+           
+           for x in dataDict.value {
+               //if x["channelid"] != nil {
+               query.identifier?.append(",\(x.channelid)")//(",\(x["channelid"]!)")
+               //}
+           }
+           service.executeQuery(query, delegate: self, didFinish: #selector(getChannelImageS(ticket:finishedWithObject:error:)))
+       }
+       
+       @objc func getChannelImageS(ticket: GTLRServiceTicket, finishedWithObject response : GTLRYouTube_ChannelListResponse, error : NSError?) {
+           
+           if let error = error {
+               //showAlert(title: "Error", message: error.localizedDescription)
+               print(error)
+               return
+           }
+           
+           for item in response.items! {
+               var i = 0
+               while i < dataDict.value.count {//for i in dataDict2.value {
+                   if item.identifier == dataDict.value[i].channelid {
+                       dataDict.value[i].channelimage = (item.snippet?.thumbnails?.defaultProperty?.url)!
+                   }
+                   i += 1
+               }
+           }
+           print(dataDict.value)
+       }
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     
     var dataDict2: Variable<[Video]> = Variable([])
@@ -56,6 +93,7 @@ class Network: NSObject {
     func getLikedVideos() {
         let query = GTLRYouTubeQuery_VideosList.query(withPart: "snippet,contentDetails,statistics")
         query.myRating = "like"
+        query.maxResults = 25
         Network.shared.service.executeQuery(query, delegate: self, didFinish: #selector(getLikedVideosS(ticket:finishedWithObject:error:)))
     }
     
@@ -113,7 +151,6 @@ class Network: NSObject {
                 i += 1
             }
         }
-        
         print(dataDict2.value)
     }
     
@@ -122,8 +159,9 @@ class Network: NSObject {
     var dataDict3: Variable<[Channel]> = Variable([])
 
     func getChannels() {
-        let query = GTLRYouTubeQuery_SubscriptionsList.query(withPart: "snippet,contentDetails")
+        let query = GTLRYouTubeQuery_SubscriptionsList.query(withPart: "snippet,contentDetails,subscriberSnippet")
         query.mine = true
+        query.maxResults = 25
         Network.shared.service.executeQuery(query, delegate: self, didFinish: #selector(displayResultWithTicket3(ticket:finishedWithObject:error:)))
     }
 
@@ -138,22 +176,50 @@ class Network: NSObject {
             print(error)
             return
         }
-
-        print(response.items?[0].snippet?.title as Any)
-        print(response.items?[1].snippet?.title as Any)
-        print(response.items?[2].snippet?.title as Any)
         var i = 0
-        
         while i < response.items!.count {
-            
-            let channel = Channel(title: (response.items?[i].snippet?.title)!)//, channelimage: (response.items?[i].snippet?.thumbnails?.defaultProperty?.url)!)
-            
+
+            let channel = Channel(id: (response.items?[i].snippet?.resourceId?.channelId)!, title: (response.items?[i].snippet?.title)!)
+            //print(response.items?[i].snippet?.resourceId?.channelId as Any)
             dataDict3.value.append(channel)
             
             i += 1
         }
-
+        getChannelImage3()
     }
+    
+    func getChannelImage3() {
+        let query = GTLRYouTubeQuery_ChannelsList.query(withPart: "snippet,contentDetails,statistics")
+        query.identifier = "UCp1mRTkVlqDnxz_9S0YD9YQ"
+        
+        for x in dataDict3.value {
+            //if x["channelid"] != nil {
+            query.identifier?.append(",\(x.id)")//(",\(x["channelid"]!)")
+            //}
+        }
+        service.executeQuery(query, delegate: self, didFinish: #selector(getChannelImageS3(ticket:finishedWithObject:error:)))
+    }
+    
+    @objc func getChannelImageS3(ticket: GTLRServiceTicket, finishedWithObject response : GTLRYouTube_ChannelListResponse, error : NSError?) {
+        
+        if let error = error {
+            print(error)
+            return
+        }
+        for item in response.items! {
+            var i = 0
+            while i < dataDict3.value.count {
+                //for i in dataDict2.value {
+                if item.identifier == dataDict3.value[i].id {
+                    dataDict3.value[i].channelimage = (item.snippet?.thumbnails?.defaultProperty?.url)!
+                    //print(dataDict3.value[i].channelimage)
+                }
+                i += 1
+            }
+        }
+        //print(dataDict3.value)
+    }
+    
     
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     var dataDict4: Variable<[QueryResult]> = Variable([])

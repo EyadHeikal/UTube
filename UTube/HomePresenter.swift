@@ -1,19 +1,19 @@
 //
-//  LibraryPresenter.swift
+//  HomePresenter.swift
 //  UTube
 //
-//  Created by Eyad Heikal on 6/11/20.
+//  Created by Eyad Heikal on 6/26/20.
 //  Copyright © 2020 Eyad Heikal. All rights reserved.
 //
 
 import Foundation
 import RxSwift
 
-class LibraryPresenter: NSObject, LibraryPresenterProtocol {
+class HomePresenter: NSObject, HomePresenterProtocol {
     
-    weak var view: LibraryView?
+    weak var view: HomeView?
     
-    init(_ view: LibraryView) {
+    init(_ view: HomeView) {
         self.view = view
     }
     
@@ -21,9 +21,9 @@ class LibraryPresenter: NSObject, LibraryPresenterProtocol {
     let disposeBag = DisposeBag()
     
     func getVideos() {
-        Network.shared.getLikedVideos()
-        Network.shared.dataDict2.asObservable().subscribe(onNext:{ value in
-            self.dataDict.value = Network.shared.dataDict2.value
+        Network.shared.getHomeVideos()
+        Network.shared.dataDict.asObservable().subscribe(onNext:{ value in
+            self.dataDict.value = Network.shared.dataDict.value
             }).disposed(by: disposeBag)
         view?.setupTableView()
     }
@@ -31,18 +31,18 @@ class LibraryPresenter: NSObject, LibraryPresenterProtocol {
 }
 
 
-extension LibraryVC: LibraryView {
+extension HomeVC: HomeView {
     
     func setupTableView() {
 
-        self.present?.dataDict.asObservable().bind(to: tableView.rx.items(cellIdentifier: "MyCell")){row, element, cell in
+        self.present?.dataDict.asObservable().bind(to: homeTableView.rx.items(cellIdentifier: "MyCell")){row, element, cell in
             let cell = cell as? VideoCell
             cell?.chanalImage.sd_setImage(with: URL(string: (self.present?.dataDict.value[row].channelimage)!), completed: nil)
-            cell?.videoTitle.text = Network.shared.dataDict2.value[row].title
+            cell?.videoTitle.text = Network.shared.dataDict.value[row].title
             cell?.videoImage.sd_setImage(with: URL(string: (self.present?.dataDict.value[row].image)!), completed: nil)
         }.disposed(by: disposeBag)
         
-        tableView.rx.itemSelected
+        homeTableView.rx.itemSelected
         .subscribe(onNext: { [weak self] indexPath in
           //let cell = self?.homeTableView.cellForRow(at: indexPath)
           //cell.button.isEnabled = false

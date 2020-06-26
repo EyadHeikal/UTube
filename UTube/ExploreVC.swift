@@ -29,24 +29,26 @@ class ExploreVC: UIViewController, UITableViewDelegate {
         tableView.rx.setDelegate(self).disposed(by: disposeBag)
         
         present = ExplorePresenter(self)
+        
+        setupTableView()
         //present?.getSearchResults(queryText: "Covid 19")
         
         
-        textField.rx.text.orEmpty.debounce(.seconds(1), scheduler: MainScheduler.instance).map({ (text)  in
-            return text
-        }).subscribe(onNext: {
-            if $0 == "" {
-                Network.shared.dataDict4.value = []
-            }
-            else {
-                Network.shared.getSearchResults(queryText: $0)
-            }
-        }).disposed(by: disposeBag)
-        
-        Network.shared.dataDict4.asObservable().bind(to: tableView.rx.items(cellIdentifier: "explorecell")){row, element, cell in
-
-             cell.textLabel?.text = Network.shared.dataDict4.value[row].title
-         }.disposed(by: disposeBag)
+//        textField.rx.text.orEmpty.debounce(.seconds(1), scheduler: MainScheduler.instance).map({ (text)  in
+//            return text
+//        }).subscribe(onNext: {
+//            if $0 == "" {
+//                Network.shared.dataDict4.value = []
+//            }
+//            else {
+//                Network.shared.getSearchResults(queryText: $0)
+//            }
+//        }).disposed(by: disposeBag)
+//        
+//        Network.shared.dataDict4.asObservable().bind(to: tableView.rx.items(cellIdentifier: "explorecell")){row, element, cell in
+//
+//             cell.textLabel?.text = Network.shared.dataDict4.value[row].title
+//         }.disposed(by: disposeBag)
             
 
     }

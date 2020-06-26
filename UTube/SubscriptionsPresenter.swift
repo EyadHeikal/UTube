@@ -8,6 +8,7 @@
 
 import Foundation
 import RxSwift
+import SDWebImage
 
 class SubscriptionsPresenter: NSObject, SubscripotionsPresenterProtocol {
     
@@ -38,6 +39,15 @@ extension SubscriptionsVC: SubscriptionsView {
         self.present?.dataDict.asObservable().bind(to: tableView.rx.items(cellIdentifier: "subcell")){row, element, cell in
 
             cell.textLabel?.text = self.present?.dataDict.value[row].title
+            
+            cell.imageView?.sd_setImage(with: URL(string: (self.present?.dataDict.value[row].channelimage) ?? "https://yt3.ggpht.com/a/AATXAJzQ2hMO7ewkj9vmqYqCM2PCL5E7cWUDVfUr0Crh=s88-c-k-c0xffffffff-no-rj-mo"),placeholderImage: #imageLiteral(resourceName: "Untitled"))
+            cell.imageView?.layer.masksToBounds = true
+
+            cell.imageView?.layer.cornerRadius = 35
+            
+            
+            // URL(string: (self.present?.dataDict.value[row].channelimage)!))
+            print(self.present?.dataDict.value[row].channelimage as Any)
         }.disposed(by: disposeBag)
             
         
